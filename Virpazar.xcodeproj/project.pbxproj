@@ -16,6 +16,16 @@
 		3A41FB92287A21400079E970 /* VirpazarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FB91287A21400079E970 /* VirpazarTests.swift */; };
 		3A41FB9C287A21400079E970 /* VirpazarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FB9B287A21400079E970 /* VirpazarUITests.swift */; };
 		3A41FB9E287A21400079E970 /* VirpazarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FB9D287A21400079E970 /* VirpazarUITestsLaunchTests.swift */; };
+		3A41FC0D287A3C050079E970 /* NSManagedObject+rawValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC0C287A3C050079E970 /* NSManagedObject+rawValue.swift */; };
+		3A41FC17287A40E00079E970 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC16287A40E00079E970 /* Currency.swift */; };
+		3A41FC1C287A44860079E970 /* EntityRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC18287A44860079E970 /* EntityRecord+CoreDataClass.swift */; };
+		3A41FC1E287A44860079E970 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC1A287A44860079E970 /* Category+CoreDataClass.swift */; };
+		3A41FC21287A471B0079E970 /* CategoryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC20287A471B0079E970 /* CategoryColor.swift */; };
+		3A41FC23287A47680079E970 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC22287A47680079E970 /* RecordType.swift */; };
+		3A41FC25287A48510079E970 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC24287A48510079E970 /* CategoryView.swift */; };
+		3A41FC28287A4ACD0079E970 /* CategoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC27287A4ACD0079E970 /* CategoryStub.swift */; };
+		3A41FC2D287A4C3F0079E970 /* StubProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC2C287A4C3F0079E970 /* StubProvider.swift */; };
+		3A41FC30287B66370079E970 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC2E287B66370079E970 /* Item+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +58,16 @@
 		3A41FB97287A21400079E970 /* VirpazarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirpazarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A41FB9B287A21400079E970 /* VirpazarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirpazarUITests.swift; sourceTree = "<group>"; };
 		3A41FB9D287A21400079E970 /* VirpazarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirpazarUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3A41FC0C287A3C050079E970 /* NSManagedObject+rawValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+rawValue.swift"; sourceTree = "<group>"; };
+		3A41FC16287A40E00079E970 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		3A41FC18287A44860079E970 /* EntityRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3A41FC1A287A44860079E970 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3A41FC20287A471B0079E970 /* CategoryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColor.swift; sourceTree = "<group>"; };
+		3A41FC22287A47680079E970 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
+		3A41FC24287A48510079E970 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		3A41FC27287A4ACD0079E970 /* CategoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStub.swift; sourceTree = "<group>"; };
+		3A41FC2C287A4C3F0079E970 /* StubProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubProvider.swift; sourceTree = "<group>"; };
+		3A41FC2E287B66370079E970 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +118,13 @@
 		3A41FB7A287A213E0079E970 /* Virpazar */ = {
 			isa = PBXGroup;
 			children = (
-				3A41FB7B287A213E0079E970 /* VirpazarApp.swift */,
-				3A41FB7D287A213E0079E970 /* ContentView.swift */,
-				3A41FB7F287A21400079E970 /* Assets.xcassets */,
-				3A41FB84287A21400079E970 /* Persistence.swift */,
-				3A41FB86287A21400079E970 /* Virpazar.xcdatamodeld */,
+				3A41FC09287A38240079E970 /* DataModel */,
+				3A41FC0B287A3BB90079E970 /* Extensions */,
 				3A41FB81287A21400079E970 /* Preview Content */,
+				3A41FC29287A4AED0079E970 /* Protocols */,
+				3A41FC0A287A383C0079E970 /* Views */,
+				3A41FB7B287A213E0079E970 /* VirpazarApp.swift */,
+				3A41FB7F287A21400079E970 /* Assets.xcassets */,
 			);
 			path = Virpazar;
 			sourceTree = "<group>";
@@ -131,6 +152,55 @@
 				3A41FB9D287A21400079E970 /* VirpazarUITestsLaunchTests.swift */,
 			);
 			path = VirpazarUITests;
+			sourceTree = "<group>";
+		};
+		3A41FC09287A38240079E970 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3A41FC26287A4AA90079E970 /* Stubs */,
+				3A41FC18287A44860079E970 /* EntityRecord+CoreDataClass.swift */,
+				3A41FC1A287A44860079E970 /* Category+CoreDataClass.swift */,
+				3A41FC2E287B66370079E970 /* Item+CoreDataClass.swift */,
+				3A41FB84287A21400079E970 /* Persistence.swift */,
+				3A41FC20287A471B0079E970 /* CategoryColor.swift */,
+				3A41FC22287A47680079E970 /* RecordType.swift */,
+				3A41FB86287A21400079E970 /* Virpazar.xcdatamodeld */,
+				3A41FC16287A40E00079E970 /* Currency.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		3A41FC0A287A383C0079E970 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A41FB7D287A213E0079E970 /* ContentView.swift */,
+				3A41FC24287A48510079E970 /* CategoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A41FC0B287A3BB90079E970 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A41FC0C287A3C050079E970 /* NSManagedObject+rawValue.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3A41FC26287A4AA90079E970 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				3A41FC27287A4ACD0079E970 /* CategoryStub.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		3A41FC29287A4AED0079E970 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3A41FC2C287A4C3F0079E970 /* StubProvider.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,10 +333,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A41FC21287A471B0079E970 /* CategoryColor.swift in Sources */,
+				3A41FC17287A40E00079E970 /* Currency.swift in Sources */,
+				3A41FC0D287A3C050079E970 /* NSManagedObject+rawValue.swift in Sources */,
 				3A41FB88287A21400079E970 /* Virpazar.xcdatamodeld in Sources */,
+				3A41FC1C287A44860079E970 /* EntityRecord+CoreDataClass.swift in Sources */,
+				3A41FC25287A48510079E970 /* CategoryView.swift in Sources */,
+				3A41FC30287B66370079E970 /* Item+CoreDataClass.swift in Sources */,
 				3A41FB85287A21400079E970 /* Persistence.swift in Sources */,
+				3A41FC23287A47680079E970 /* RecordType.swift in Sources */,
+				3A41FC2D287A4C3F0079E970 /* StubProvider.swift in Sources */,
 				3A41FB7E287A213E0079E970 /* ContentView.swift in Sources */,
 				3A41FB7C287A213E0079E970 /* VirpazarApp.swift in Sources */,
+				3A41FC1E287A44860079E970 /* Category+CoreDataClass.swift in Sources */,
+				3A41FC28287A4ACD0079E970 /* CategoryStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +522,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -471,7 +551,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -13,10 +13,14 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
+
         for _ in 0..<10 {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
         }
+        
+        let _ = CategoryStub().createMany(context: viewContext)
+
         do {
             try viewContext.save()
         } catch {
@@ -25,6 +29,7 @@ struct PersistenceController {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
+
         return result
     }()
 
