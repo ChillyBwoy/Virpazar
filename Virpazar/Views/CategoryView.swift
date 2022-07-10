@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct CategoryView: View {
     var category: Category
@@ -26,20 +27,14 @@ struct CategoryView: View {
 }
 
 struct CategoryView_Previews: PreviewProvider {
-    @Environment(\.managedObjectContext) var managedObjectContext
-
     static var previews: some View {
-        let categories = FetchRequest<Category>(
-//            entity: Category.entity(),
-            sortDescriptors: []
-        )
-
-        return Group {
-//            Text("Categories: \(categories.wrappedValue[0].name)")
-            ForEach(categories.wrappedValue) { category in
-                CategoryView(category: category)
+        PersistencePreview{ provider in
+            Group {
+                CategoryView(category: Category(context: provider.context, name: "Grocery", color: .teal))
+                CategoryView(category: Category(context: provider.context, name: "Restaurant", color: .red))
+                CategoryView(category: Category(context: provider.context, name: "Public Transport", color: .blue))
             }
+            .previewLayout(.fixed(width: 320, height: 50))
         }
-        .previewLayout(.fixed(width: 320, height: 50))
     }
 }

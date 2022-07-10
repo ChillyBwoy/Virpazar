@@ -83,6 +83,15 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        PersistencePreview(dispatch: { provider in
+            for _ in 0..<10 {
+                let newItem = Item(context: provider.context)
+                newItem.timestamp = Date()
+            }
+
+            provider.save()
+        }) {
+            ContentView()
+        }
     }
 }
