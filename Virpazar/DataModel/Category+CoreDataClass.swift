@@ -33,6 +33,14 @@ extension Category {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Category> {
         return NSFetchRequest<Category>(entityName: "Category")
     }
+    
+    @nonobjc class func fetchAll() -> NSFetchRequest<Category> {
+        let request: NSFetchRequest<Category> = Category.fetchRequest()
+        request.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+        return request
+    }
 }
 
 // MARK: Generated accessors for records

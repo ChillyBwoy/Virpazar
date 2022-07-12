@@ -13,7 +13,7 @@ struct PersistencePreview<Content: View>: View {
     private var persistanceController: DataProvider
     
     init(dispatch callback: (_ provider: DataProvider) -> Void, @ViewBuilder content: (_ provider: DataProvider) -> Content) {
-        persistanceController = PersistenceControllerMemoroy()
+        persistanceController = PersistenceControllerMemory()
         
         callback(persistanceController)
         
@@ -21,7 +21,7 @@ struct PersistencePreview<Content: View>: View {
     }
     
     init(dispatch callback: (_ provider: DataProvider) -> Void, @ViewBuilder content: () -> Content) {
-        persistanceController = PersistenceControllerMemoroy()
+        persistanceController = PersistenceControllerMemory()
         
         callback(persistanceController)
         
@@ -29,13 +29,13 @@ struct PersistencePreview<Content: View>: View {
     }
     
     init(@ViewBuilder content: (_ provider: DataProvider) -> Content) {
-        persistanceController = PersistenceControllerMemoroy()
+        persistanceController = PersistenceControllerMemory()
 
         self.content = content(persistanceController)
     }
     
     init(@ViewBuilder content: () -> Content) {
-        persistanceController = PersistenceControllerMemoroy()
+        persistanceController = PersistenceControllerMemory()
 
         self.content = content()
     }

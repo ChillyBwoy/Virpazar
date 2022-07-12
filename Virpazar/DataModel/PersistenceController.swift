@@ -35,7 +35,7 @@ struct PersistenceController: DataProvider {
     }
 }
 
-struct PersistenceControllerMemoroy: DataProvider {
+struct PersistenceControllerMemory: DataProvider {
     private(set) var containerName = "Virpazar"
     private(set) var context: NSManagedObjectContext
 

@@ -27,6 +27,10 @@
 		3A41FC30287B66370079E970 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC2E287B66370079E970 /* Item+CoreDataClass.swift */; };
 		3A41FC33287B6FE40079E970 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC32287B6FE40079E970 /* DataProvider.swift */; };
 		3A41FC35287B71CD0079E970 /* PersistencePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC34287B71CD0079E970 /* PersistencePreview.swift */; };
+		3A681F4C287CBC70007A751D /* LocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F4B287CBC70007A751D /* LocationObject.swift */; };
+		3A681F4E287CBD28007A751D /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F4D287CBD28007A751D /* LocationView.swift */; };
+		3A681F58287CD639007A751D /* RecordFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F57287CD639007A751D /* RecordFormView.swift */; };
+		3A681F5C287CDA6C007A751D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F5B287CDA6C007A751D /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		3A41FC2E287B66370079E970 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3A41FC32287B6FE40079E970 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		3A41FC34287B71CD0079E970 /* PersistencePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencePreview.swift; sourceTree = "<group>"; };
+		3A681F4B287CBC70007A751D /* LocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObject.swift; sourceTree = "<group>"; };
+		3A681F4D287CBD28007A751D /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		3A681F57287CD639007A751D /* RecordFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordFormView.swift; sourceTree = "<group>"; };
+		3A681F5B287CDA6C007A751D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 		3A41FB7A287A213E0079E970 /* Virpazar */ = {
 			isa = PBXGroup;
 			children = (
+				3A681F4A287CBC5E007A751D /* Managers */,
 				3A41FC09287A38240079E970 /* DataModel */,
 				3A41FC0B287A3BB90079E970 /* Extensions */,
 				3A41FB81287A21400079E970 /* Preview Content */,
@@ -165,8 +174,8 @@
 				3A41FB84287A21400079E970 /* PersistenceController.swift */,
 				3A41FC20287A471B0079E970 /* CategoryColor.swift */,
 				3A41FC22287A47680079E970 /* RecordType.swift */,
-				3A41FB86287A21400079E970 /* Virpazar.xcdatamodeld */,
 				3A41FC16287A40E00079E970 /* Currency.swift */,
+				3A41FB86287A21400079E970 /* Virpazar.xcdatamodeld */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -177,6 +186,9 @@
 				3A41FB7D287A213E0079E970 /* ContentView.swift */,
 				3A41FC24287A48510079E970 /* CategoryView.swift */,
 				3A41FC34287B71CD0079E970 /* PersistencePreview.swift */,
+				3A681F4D287CBD28007A751D /* LocationView.swift */,
+				3A681F57287CD639007A751D /* RecordFormView.swift */,
+				3A681F5B287CDA6C007A751D /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +208,14 @@
 				3A41FC32287B6FE40079E970 /* DataProvider.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3A681F4A287CBC5E007A751D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3A681F4B287CBC70007A751D /* LocationObject.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,15 +352,19 @@
 				3A41FC17287A40E00079E970 /* Currency.swift in Sources */,
 				3A41FC0D287A3C050079E970 /* NSManagedObject+rawValue.swift in Sources */,
 				3A41FB88287A21400079E970 /* Virpazar.xcdatamodeld in Sources */,
+				3A681F4C287CBC70007A751D /* LocationObject.swift in Sources */,
 				3A41FC1C287A44860079E970 /* EntityRecord+CoreDataClass.swift in Sources */,
+				3A681F4E287CBD28007A751D /* LocationView.swift in Sources */,
 				3A41FC25287A48510079E970 /* CategoryView.swift in Sources */,
 				3A41FC30287B66370079E970 /* Item+CoreDataClass.swift in Sources */,
 				3A41FB85287A21400079E970 /* PersistenceController.swift in Sources */,
 				3A41FC23287A47680079E970 /* RecordType.swift in Sources */,
 				3A41FC2D287A4C3F0079E970 /* StubProvider.swift in Sources */,
+				3A681F5C287CDA6C007A751D /* MainView.swift in Sources */,
 				3A41FC35287B71CD0079E970 /* PersistencePreview.swift in Sources */,
 				3A41FB7E287A213E0079E970 /* ContentView.swift in Sources */,
 				3A41FB7C287A213E0079E970 /* VirpazarApp.swift in Sources */,
+				3A681F58287CD639007A751D /* RecordFormView.swift in Sources */,
 				3A41FC33287B6FE40079E970 /* DataProvider.swift in Sources */,
 				3A41FC1E287A44860079E970 /* Category+CoreDataClass.swift in Sources */,
 			);

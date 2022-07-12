@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct VirpazarApp: App {
-    let persistenceController = PersistenceController()
+    private let persistenceController = PersistenceController()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.context)
         }
     }
