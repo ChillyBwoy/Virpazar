@@ -1,5 +1,5 @@
 //
-//  RecordFormView.swift
+//  SpendingItemView.swift
 //  Virpazar
 //
 //  Created by Eugene Cheltsov on 12.07.2022.
@@ -64,7 +64,7 @@ fileprivate struct CurrencyValuesView: View {
                 .frame(maxWidth: 250, maxHeight: 120)
                 .labelsHidden()
                 .clipped()
-            
+
 //            let columns: [GridItem] = [
 //                GridItem(.flexible()),
 //                GridItem(.flexible()),
@@ -97,14 +97,20 @@ fileprivate struct CurrencyValuesView: View {
     }
 }
 
-struct RecordFormView: View {
-    private let entity: EntityRecord
+struct SpendingItemView: View {
+    private let entity: SpendingItem
 
-    @FetchRequest(fetchRequest: Category.fetchAll()) private var categories: FetchedResults<Category>
     @StateObject private var location: LocationObject
     @State private var amount: Int = 1
+    
+    @FetchRequest(fetchRequest: SpendingCategory.fetchAll())
+    private var categories: FetchedResults<SpendingCategory>
+    
+    private func handleSubmit() {
+        
+    }
 
-    init(entity: EntityRecord) {
+    init(entity: SpendingItem) {
         self.entity = entity
         let location = LocationObject(coordinate: CLLocationCoordinate2D(latitude: entity.latitude, longitude: entity.longitude))
 
@@ -126,7 +132,7 @@ struct RecordFormView: View {
                 CurrencyValuesView(currency: entity.currency, amount: $amount)
                     .padding()
                 
-                Button(action: {}) {
+                Button(action: handleSubmit) {
                     Text("Add")
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -139,20 +145,20 @@ struct RecordFormView: View {
     }
 }
 
-struct RecordFormView_Previews: PreviewProvider {
+struct SpendingItemView_Previews: PreviewProvider {
     static var previews: some View {
         PersistencePreview{ provider in
-            RecordFormView(
-                entity: EntityRecord(
+            SpendingItemView(
+                entity: SpendingItem(
                     context: provider.context,
                     type: .spend,
                     date: Date.now,
-                    category: Category(
+                    category: SpendingCategory(
                         context: provider.context,
                         name: "Grocery",
                         color: .teal
                     ),
-                    currency: .RUB,
+                    currency: .EUR,
                     latitude: 35.68173905166872,
                     longitude: 139.76542760754913
                 )

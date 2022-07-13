@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct CategoryView: View {
-    var category: Category
+    var category: SpendingCategory
 
     var body: some View {
         ZStack(alignment: .center) {
@@ -30,9 +30,9 @@ struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
         PersistencePreview{ provider in
             Group {
-                CategoryView(category: Category(context: provider.context, name: "Grocery", color: .teal))
-                CategoryView(category: Category(context: provider.context, name: "Restaurant", color: .red))
-                CategoryView(category: Category(context: provider.context, name: "Public Transport", color: .blue))
+                CategoryView(category: SpendingCategory(context: provider.context, name: "Grocery", color: .teal))
+                CategoryView(category: SpendingCategory(context: provider.context, name: "Restaurant", color: .red))
+                CategoryView(category: SpendingCategory(context: provider.context, name: "Public Transport", color: .blue))
             }
             .previewLayout(.fixed(width: 320, height: 50))
         }

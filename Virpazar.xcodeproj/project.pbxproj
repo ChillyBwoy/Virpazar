@@ -18,8 +18,8 @@
 		3A41FB9E287A21400079E970 /* VirpazarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FB9D287A21400079E970 /* VirpazarUITestsLaunchTests.swift */; };
 		3A41FC0D287A3C050079E970 /* NSManagedObject+rawValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC0C287A3C050079E970 /* NSManagedObject+rawValue.swift */; };
 		3A41FC17287A40E00079E970 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC16287A40E00079E970 /* Currency.swift */; };
-		3A41FC1C287A44860079E970 /* EntityRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC18287A44860079E970 /* EntityRecord+CoreDataClass.swift */; };
-		3A41FC1E287A44860079E970 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC1A287A44860079E970 /* Category+CoreDataClass.swift */; };
+		3A41FC1C287A44860079E970 /* SpendingItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC18287A44860079E970 /* SpendingItem+CoreDataClass.swift */; };
+		3A41FC1E287A44860079E970 /* SpendingCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC1A287A44860079E970 /* SpendingCategory+CoreDataClass.swift */; };
 		3A41FC21287A471B0079E970 /* CategoryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC20287A471B0079E970 /* CategoryColor.swift */; };
 		3A41FC23287A47680079E970 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC22287A47680079E970 /* RecordType.swift */; };
 		3A41FC25287A48510079E970 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC24287A48510079E970 /* CategoryView.swift */; };
@@ -29,8 +29,9 @@
 		3A41FC35287B71CD0079E970 /* PersistencePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC34287B71CD0079E970 /* PersistencePreview.swift */; };
 		3A681F4C287CBC70007A751D /* LocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F4B287CBC70007A751D /* LocationObject.swift */; };
 		3A681F4E287CBD28007A751D /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F4D287CBD28007A751D /* LocationView.swift */; };
-		3A681F58287CD639007A751D /* RecordFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F57287CD639007A751D /* RecordFormView.swift */; };
+		3A681F58287CD639007A751D /* SpendingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F57287CD639007A751D /* SpendingItemView.swift */; };
 		3A681F5C287CDA6C007A751D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F5B287CDA6C007A751D /* MainView.swift */; };
+		3ACF8167287EE7A70066DFD9 /* SpendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF8166287EE7A70066DFD9 /* SpendingListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +66,8 @@
 		3A41FB9D287A21400079E970 /* VirpazarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirpazarUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3A41FC0C287A3C050079E970 /* NSManagedObject+rawValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+rawValue.swift"; sourceTree = "<group>"; };
 		3A41FC16287A40E00079E970 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		3A41FC18287A44860079E970 /* EntityRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntityRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3A41FC1A287A44860079E970 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3A41FC18287A44860079E970 /* SpendingItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpendingItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3A41FC1A287A44860079E970 /* SpendingCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpendingCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3A41FC20287A471B0079E970 /* CategoryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColor.swift; sourceTree = "<group>"; };
 		3A41FC22287A47680079E970 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 		3A41FC24287A48510079E970 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
@@ -76,8 +77,9 @@
 		3A41FC34287B71CD0079E970 /* PersistencePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencePreview.swift; sourceTree = "<group>"; };
 		3A681F4B287CBC70007A751D /* LocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObject.swift; sourceTree = "<group>"; };
 		3A681F4D287CBD28007A751D /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
-		3A681F57287CD639007A751D /* RecordFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordFormView.swift; sourceTree = "<group>"; };
+		3A681F57287CD639007A751D /* SpendingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingItemView.swift; sourceTree = "<group>"; };
 		3A681F5B287CDA6C007A751D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3ACF8166287EE7A70066DFD9 /* SpendingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +170,8 @@
 		3A41FC09287A38240079E970 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				3A41FC18287A44860079E970 /* EntityRecord+CoreDataClass.swift */,
-				3A41FC1A287A44860079E970 /* Category+CoreDataClass.swift */,
+				3A41FC18287A44860079E970 /* SpendingItem+CoreDataClass.swift */,
+				3A41FC1A287A44860079E970 /* SpendingCategory+CoreDataClass.swift */,
 				3A41FC2E287B66370079E970 /* Item+CoreDataClass.swift */,
 				3A41FB84287A21400079E970 /* PersistenceController.swift */,
 				3A41FC20287A471B0079E970 /* CategoryColor.swift */,
@@ -187,8 +189,9 @@
 				3A41FC24287A48510079E970 /* CategoryView.swift */,
 				3A41FC34287B71CD0079E970 /* PersistencePreview.swift */,
 				3A681F4D287CBD28007A751D /* LocationView.swift */,
-				3A681F57287CD639007A751D /* RecordFormView.swift */,
+				3A681F57287CD639007A751D /* SpendingItemView.swift */,
 				3A681F5B287CDA6C007A751D /* MainView.swift */,
+				3ACF8166287EE7A70066DFD9 /* SpendingListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,11 +352,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A41FC21287A471B0079E970 /* CategoryColor.swift in Sources */,
+				3ACF8167287EE7A70066DFD9 /* SpendingListView.swift in Sources */,
 				3A41FC17287A40E00079E970 /* Currency.swift in Sources */,
 				3A41FC0D287A3C050079E970 /* NSManagedObject+rawValue.swift in Sources */,
 				3A41FB88287A21400079E970 /* Virpazar.xcdatamodeld in Sources */,
 				3A681F4C287CBC70007A751D /* LocationObject.swift in Sources */,
-				3A41FC1C287A44860079E970 /* EntityRecord+CoreDataClass.swift in Sources */,
+				3A41FC1C287A44860079E970 /* SpendingItem+CoreDataClass.swift in Sources */,
 				3A681F4E287CBD28007A751D /* LocationView.swift in Sources */,
 				3A41FC25287A48510079E970 /* CategoryView.swift in Sources */,
 				3A41FC30287B66370079E970 /* Item+CoreDataClass.swift in Sources */,
@@ -364,9 +368,9 @@
 				3A41FC35287B71CD0079E970 /* PersistencePreview.swift in Sources */,
 				3A41FB7E287A213E0079E970 /* ContentView.swift in Sources */,
 				3A41FB7C287A213E0079E970 /* VirpazarApp.swift in Sources */,
-				3A681F58287CD639007A751D /* RecordFormView.swift in Sources */,
+				3A681F58287CD639007A751D /* SpendingItemView.swift in Sources */,
 				3A41FC33287B6FE40079E970 /* DataProvider.swift in Sources */,
-				3A41FC1E287A44860079E970 /* Category+CoreDataClass.swift in Sources */,
+				3A41FC1E287A44860079E970 /* SpendingCategory+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
