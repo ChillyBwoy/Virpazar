@@ -6,11 +6,11 @@
 //
 //
 
-import Foundation
+import SwiftUI
 import CoreData
 
 @objc(SpendingItem)
-public class SpendingItem: NSManagedObject {
+public class SpendingItem: NSManagedObject, Identifiable {
     @NSManaged public var id: UUID
     @NSManaged public var amount: Int32
     @NSManaged public var date: Date
@@ -46,6 +46,19 @@ public class SpendingItem: NSManagedObject {
         self.latitude = latitude
         self.longitude = longitude
     }
+    
+    convenience init(context: NSManagedObjectContext,
+                     type: RecordType,
+                     date: Date,
+                     category: SpendingCategory,
+                     currency: Currency,
+                     latitude: Double,
+                     longitude: Double,
+                     amount: Int
+    ) {
+        self.init(context: context, type: type, date: date, category: category, currency: currency, latitude: latitude, longitude: longitude)
+        self.amount = Int32(amount)
+    }
 }
 
 extension SpendingItem {
@@ -62,6 +75,29 @@ extension SpendingItem {
     }
 }
 
-extension SpendingItem : Identifiable {
+extension SpendingItem {
+    static func groupByDate(_ result: FetchedResults<SpendingItem>) -> [(Date, [SpendingItem])] {
+        let groups = Dictionary(grouping: result, by: { item in item.date })
 
+        let sortedKeys: [Date] = groups.keys.sorted { (a, b) -> Bool in
+            if let itemA = groups[a]?[0], let itemB = groups[b]?[0] {
+                return itemA.date.compare(itemB.date) == .orderedDescending
+            }
+            return false
+        }
+
+        return sortedKeys.map { ($0, groups[$0] ?? []) }
+    }
+    
+    static func groupByCategory(_ result: [SpendingItem]) -> [(SpendingCategory, [SpendingItem])] {
+        let groups = Dictionary(grouping: result, by: { item in item.category })
+        
+        return groups.keys.map { ($0, groups[$0] ?? []) }
+    }
+    
+    static func totalByCurrency(_ result: [SpendingItem]) -> [(Currency, Int)] {
+        let groups = Dictionary(grouping: result, by: { item in item.currency })
+
+        return groups.keys.map { ($0, (groups[$0] ?? []).reduce(0) { $0 + Int($1.amount) }) }
+    }
 }
