@@ -32,9 +32,7 @@ public class SpendingItem: NSManagedObject, Identifiable {
                      type: RecordType,
                      date: Date,
                      category: SpendingCategory,
-                     currency: Currency,
-                     latitude: Double,
-                     longitude: Double
+                     currency: Currency
     ) {
         self.init(context: context)
         self.id = UUID()
@@ -43,6 +41,17 @@ public class SpendingItem: NSManagedObject, Identifiable {
         self.category = category
         self.type = type
         self.currency = currency
+    }
+    
+    convenience init(context: NSManagedObjectContext,
+                     type: RecordType,
+                     date: Date,
+                     category: SpendingCategory,
+                     currency: Currency,
+                     latitude: Double,
+                     longitude: Double
+    ) {
+        self.init(context: context, type: type, date: date, category: category, currency: currency)
         self.latitude = latitude
         self.longitude = longitude
     }
@@ -73,6 +82,11 @@ extension SpendingItem {
         ]
         return request
     }
+}
+
+struct SpendingItemGroup {
+    let total: Int
+    
 }
 
 extension SpendingItem {

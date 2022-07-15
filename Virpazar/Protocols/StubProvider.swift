@@ -9,6 +9,5 @@ import CoreData
 
 protocol StubProvider {
     associatedtype Entity
-    
-    func createMany(context: NSManagedObjectContext) -> [Entity]
+    init(_ ctx: NSManagedObjectContext)
 }

@@ -21,7 +21,7 @@
     </entity>
     <elements>
         <element name="Item" positionX="-440.375" positionY="49.484375" width="128" height="44"/>
-        <element name="SpendingCategory" positionX="-642.03125" positionY="-548.76171875" width="105.62890625" height="103"/>
+        <element name="SpendingCategory" positionX="-642.03125" positionY="-548.76171875" width="105.62890625" height="89"/>
         <element name="SpendingItem" positionX="-207.09375" positionY="-226.421875" width="128" height="149"/>
     </elements>
 </model>

@@ -15,11 +15,25 @@ fileprivate struct SpendingItemsGroupedByDateView: View {
         Section {
             VStack(alignment: .leading) {
                 Spacer()
+
                 Text(date, style: .date)
                     .font(.caption)
-                
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
                 Spacer()
-                VStack(alignment: .trailing) {
+                VStack(alignment: .trailing, spacing: 4) {
+                    ForEach(items, id: \.id) { item in
+                        HStack {
+                            Text(item.category.name)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 2)
+                                .background(Color(item.category.color.value))
+                                .clipShape(Capsule())
+                            Spacer()
+                            Text(item.amount, format: .currency(code: item.currency.rawValue))
+                        }.font(.subheadline)
+                    }
+                    Spacer()
                     ForEach(SpendingItem.totalByCurrency(items), id: \.0) { (currency, sum) in
                         Text(sum, format: .currency(code: currency.rawValue))
                             .font(.title2)
@@ -45,30 +59,25 @@ struct SpendingListView: View {
     
     var body: some View {
         NavigationView {
-//            NavigationLink(destination: Text("Second View")) {
-//                Text("Goto")
-//            }
-
              List(SpendingItem.groupByDate(entities), id: \.0) { (date, items) in
                  SpendingItemsGroupedByDateView(items: items, date: date)
              }
-//            .listStyle(.grouped)
 
-            .navigationTitle("Title")
+            .navigationTitle("Expenses")
             .navigationBarTitleDisplayMode(.large)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                       Spacer()
-               }
-                ToolbarItem(placement: .bottomBar) {
-                    Button(action: {
-                      print("Add")
-                    }) {
-                      Image(systemName: "plus")
-                    }
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .bottomBar) {
+//                       Spacer()
+//               }
+//                ToolbarItem(placement: .bottomBar) {
+//                    Button(action: {
+//                      print("Add")
+//                    }) {
+//                      Image(systemName: "plus")
+//                    }
+//                }
+//            }
         }
     }
 }
@@ -76,36 +85,9 @@ struct SpendingListView: View {
 struct SpendingListView_Previews: PreviewProvider {
     static var previews: some View {
         PersistencePreview(dispatch: { provider in
-            let lat = 35.68173905166872
-            let lan = 139.76542760754913
-            
-            let categories = [
-                SpendingCategory(context: provider.context, name: "Grocery", color: .green),
-                SpendingCategory(context: provider.context, name: "Transport", color: .blue),
-                SpendingCategory(context: provider.context, name: "Cafe", color: .red),
-                SpendingCategory(context: provider.context, name: "Rent", color: .teal)
-            ]
+            let stub = SpendingItemStub(provider.context)
 
-            let now = Date()
-            var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: now)
-
-            for idx in 0...50 {
-                let _ = SpendingItem(
-                    context: provider.context,
-                    type: .spend,
-                    date: Calendar.current.date(from: dateComponents)!,
-                    category: categories.randomElement()!,
-                    currency: .JPY,
-                    latitude: lat,
-                    longitude: lan,
-                    amount: Int.random(in: 100..<1000)
-                )
-                
-                let randMod = Int.random(in: 3..<5)
-                if idx % randMod == 0 {
-                    dateComponents.day! -= 1
-                }
-            }
+            let _ = stub.createMany(count: 50)
 
             provider.save()
         }) {
