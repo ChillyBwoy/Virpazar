@@ -42,7 +42,7 @@ class SpendingItemStub: StubProvider {
                     currency: .JPY,
                     latitude: lat,
                     longitude: lan,
-                    amount: Int.random(in: 100..<1000)
+                    amount: Int.random(in: 100..<1500)
                 )
             )
 

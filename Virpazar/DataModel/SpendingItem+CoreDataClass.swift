@@ -14,7 +14,7 @@ public class SpendingItem: NSManagedObject, Identifiable {
     @NSManaged public var id: UUID
     @NSManaged public var amount: Int32
     @NSManaged public var date: Date
-    @NSManaged public var category: SpendingCategory
+    @NSManaged public var category: SpendingCategory?
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
 
@@ -84,11 +84,6 @@ extension SpendingItem {
     }
 }
 
-struct SpendingItemGroup {
-    let total: Int
-    
-}
-
 extension SpendingItem {
     static func groupByDate(_ result: FetchedResults<SpendingItem>) -> [(Date, [SpendingItem])] {
         let groups = Dictionary(grouping: result, by: { item in item.date })
@@ -103,7 +98,7 @@ extension SpendingItem {
         return sortedKeys.map { ($0, groups[$0] ?? []) }
     }
     
-    static func groupByCategory(_ result: [SpendingItem]) -> [(SpendingCategory, [SpendingItem])] {
+    static func groupByCategory(_ result: [SpendingItem]) -> [(SpendingCategory?, [SpendingItem])] {
         let groups = Dictionary(grouping: result, by: { item in item.category })
         
         return groups.keys.map { ($0, groups[$0] ?? []) }

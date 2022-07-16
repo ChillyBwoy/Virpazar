@@ -14,7 +14,7 @@ struct CategoryView: View {
     var body: some View {
         ZStack(alignment: .center) {
             RoundedRectangle(cornerRadius: 4.0, style: .continuous)
-                .fill(Color(category.color.value))
+                .fill(Color(category.color))
             HStack(alignment: .center, spacing: 2) {
                 Text(category.name)
                     .font(.caption)
@@ -30,9 +30,9 @@ struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
         PersistencePreview{ provider in
             Group {
-                CategoryView(category: SpendingCategory(context: provider.context, name: "Grocery", color: .teal))
-                CategoryView(category: SpendingCategory(context: provider.context, name: "Restaurant", color: .red))
-                CategoryView(category: SpendingCategory(context: provider.context, name: "Public Transport", color: .blue))
+                CategoryView(category: SpendingCategory(context: provider.context, name: "Grocery"))
+                CategoryView(category: SpendingCategory(context: provider.context, name: "Restaurant"))
+                CategoryView(category: SpendingCategory(context: provider.context, name: "Public Transport"))
             }
             .previewLayout(.fixed(width: 320, height: 50))
         }

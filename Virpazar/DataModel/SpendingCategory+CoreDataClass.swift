@@ -8,24 +8,43 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 @objc(SpendingCategory)
 public class SpendingCategory: NSManagedObject, Identifiable {
     @NSManaged public var id: UUID
     @NSManaged public var name: String
     @NSManaged public var records: Set<SpendingItem>
-
-    var color: CategoryColor {
-      set { setRawValue(forKey: "color", value: newValue) }
-      get { rawValue(forKey: "color")! }
-    }
+    @NSManaged public var color: UIColor
     
-    convenience init(context: NSManagedObjectContext, name: String, color: CategoryColor) {
+    convenience init(context: NSManagedObjectContext, name: String) {
         self.init(context: context)
         self.id = UUID()
         self.name = name
 //        self.records = Set<EntityRecord>()
-        self.color = color
+        self.color = generateColorFor(name)
+    }
+    
+    private func generateColorFor(_ text: String) -> UIColor {
+        var hash = 0
+        let colorConstant = 131
+        let maxSafeValue = Int.max / colorConstant
+
+        for char in text.unicodeScalars{
+            if hash > maxSafeValue {
+                hash = hash / colorConstant
+            }
+            hash = Int(char.value) + ((hash << 5) - hash)
+        }
+
+        let finalHash = abs(hash) % (256 * 256 * 256)
+        
+        return UIColor(
+            red: CGFloat((finalHash & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((finalHash & 0xFF00) >> 8) / 255.0,
+            blue: CGFloat((finalHash & 0xFF)) / 255.0,
+            alpha: 1.0
+        )
     }
 }
 

@@ -18,9 +18,10 @@ struct CategoryListView: View {
                     NavigationLink(destination: Text("Second View")) {
                         HStack {
                             Circle()
-                                .fill(Color(category.color.value))
-                                .frame(width: 20)
+                                .fill(Color(category.color))
+                                .frame(width: 24)
                             Text(category.name)
+                                .lineLimit(1)
                             Spacer()
                         }
                     }

@@ -24,11 +24,13 @@ fileprivate struct SpendingItemsGroupedByDateView: View {
                 VStack(alignment: .trailing, spacing: 4) {
                     ForEach(items, id: \.id) { item in
                         HStack {
-                            Text(item.category.name)
+                            Text(item.category?.name ?? "No category")
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 2)
-                                .background(Color(item.category.color.value))
+                                .background(Color(item.category?.color ?? .gray))
+                                .foregroundColor(.white)
                                 .clipShape(Capsule())
+                                .lineLimit(1)
                             Spacer()
                             Text(item.amount, format: .currency(code: item.currency.rawValue))
                         }.font(.subheadline)

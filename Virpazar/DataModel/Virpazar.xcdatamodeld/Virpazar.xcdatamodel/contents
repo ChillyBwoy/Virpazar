@@ -4,7 +4,7 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="SpendingCategory" representedClassName="SpendingCategory" syncable="YES">
-        <attribute name="color" attributeType="String"/>
+        <attribute name="color" attributeType="Transformable" valueTransformerName="UIColorTransformer" customClassName="UIColor"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
         <relationship name="records" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="SpendingItem" inverseName="category" inverseEntity="SpendingItem"/>
@@ -17,11 +17,11 @@
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="type" attributeType="String"/>
-        <relationship name="category" maxCount="1" deletionRule="Deny" destinationEntity="SpendingCategory" inverseName="records" inverseEntity="SpendingCategory"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpendingCategory" inverseName="records" inverseEntity="SpendingCategory"/>
     </entity>
     <elements>
         <element name="Item" positionX="-440.375" positionY="49.484375" width="128" height="44"/>
-        <element name="SpendingCategory" positionX="-642.03125" positionY="-548.76171875" width="105.62890625" height="89"/>
-        <element name="SpendingItem" positionX="-207.09375" positionY="-226.421875" width="128" height="149"/>
+        <element name="SpendingCategory" positionX="-642.03125" positionY="-548.76171875" width="105.62890625" height="103"/>
+        <element name="SpendingItem" positionX="-207.09375" positionY="-226.421875" width="128" height="163"/>
     </elements>
 </model>

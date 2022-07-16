@@ -7,11 +7,14 @@
 
 import CoreData
 
+
 struct PersistenceController: DataProvider {
     private(set) var containerName = "Virpazar"
     private(set) var context: NSManagedObjectContext
 
     init() {
+        ValueTransformer.setValueTransformer(UIColorTransformer(), forName: NSValueTransformerName("UIColorTransformer"))
+
         let container = NSPersistentCloudKitContainer(name: containerName)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -43,12 +46,12 @@ struct PersistenceControllerMemory: DataProvider {
         let description = NSPersistentStoreDescription()
         description.type = NSInMemoryStoreType
         description.shouldAddStoreAsynchronously = false
+        
+        ValueTransformer.setValueTransformer(UIColorTransformer(), forName: NSValueTransformerName("UIColorTransformer"))
 
         let container = NSPersistentCloudKitContainer(name: containerName)
-//        container.persistentStoreDescriptions = [description]
         container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-//            precondition(storeDescription.type == NSInMemoryStoreType)
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
