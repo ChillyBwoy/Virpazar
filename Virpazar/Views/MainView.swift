@@ -52,9 +52,9 @@ struct MainView: View {
         }.sheet(
             isPresented: $tabData.isCustomItemSelected,
             onDismiss: {
-                
+
             }) {
-                
+                SpendingItemFormView()
             }
     }
 }

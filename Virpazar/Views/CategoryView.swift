@@ -17,7 +17,8 @@ struct CategoryView: View {
                 .fill(Color(category.color))
             HStack(alignment: .center, spacing: 2) {
                 Text(category.name)
-                    .font(.caption)
+                    .font(.body)
+                    .lineLimit(1)
                     .foregroundColor(.white)
             }
             .padding(.horizontal, 4)

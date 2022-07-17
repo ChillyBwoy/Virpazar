@@ -51,4 +51,41 @@ extension Currency {
             }
         }
     }
+    
+    public func symbol() -> String {
+        var candidates: [String] = []
+        let locales: [String] = NSLocale.availableLocaleIdentifiers
+
+        for localeID in locales {
+            guard let symbol = findMatchingSymbol(localeID: localeID, currencyCode: rawValue) else {
+                continue
+            }
+
+            if symbol.count == 1 {
+                return symbol
+            }
+
+            candidates.append(symbol)
+        }
+        
+        if candidates.count < 1 {
+            return rawValue
+        }
+
+        return candidates.sorted(by: { $0.count < $1.count }).first ?? rawValue
+    }
+    
+    private func findMatchingSymbol(localeID: String, currencyCode: String) -> String? {
+        let locale = Locale(identifier: localeID as String)
+        guard let code = locale.currencyCode else {
+            return nil
+        }
+        if code != currencyCode {
+            return nil
+        }
+        guard let symbol = locale.currencySymbol else {
+            return nil
+        }
+        return symbol
+    }
 }
