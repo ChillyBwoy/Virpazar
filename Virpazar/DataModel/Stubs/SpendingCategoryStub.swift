@@ -18,11 +18,11 @@ class SpendingCategoryStub: StubProvider {
 
     func createMany() -> [SpendingCategory] {
         return [
-            SpendingCategory(context: ctx, name: "Grocery"),
-            SpendingCategory(context: ctx, name: "Transport"),
-            SpendingCategory(context: ctx, name: "Cafe"),
-            SpendingCategory(context: ctx, name: "Rent"),
-            SpendingCategory(context: ctx, name: "A brand new category with a pretty long name")
+            SpendingCategory(ctx, name: "Grocery"),
+            SpendingCategory(ctx, name: "Transport"),
+            SpendingCategory(ctx, name: "Cafe"),
+            SpendingCategory(ctx, name: "Rent"),
+            SpendingCategory(ctx, name: "A brand new category with a pretty long name")
         ]
     }
 }

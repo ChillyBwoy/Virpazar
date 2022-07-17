@@ -12,7 +12,7 @@ class UIColorTransformer: ValueTransformer {
         guard let color = value as? UIColor else {
             return nil
         }
-        
+
         do {
             let data = try NSKeyedArchiver.archivedData(withRootObject: color, requiringSecureCoding: true)
             return data

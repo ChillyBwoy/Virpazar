@@ -44,7 +44,6 @@ extension CurrencyValueButtonView {
     }
 }
 
-
 struct CurrencyValuesView: View {
     let currency: Currency
     let color: Color

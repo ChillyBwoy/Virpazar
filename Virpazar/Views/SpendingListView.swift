@@ -52,7 +52,7 @@ struct SpendingListView: View {
 
     @FetchRequest(fetchRequest: SpendingItem.fetchAll())
     private var entities: FetchedResults<SpendingItem>
-    
+
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .short

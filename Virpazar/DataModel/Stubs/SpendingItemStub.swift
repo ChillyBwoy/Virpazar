@@ -7,8 +7,6 @@
 
 import CoreData
 
-
-
 class SpendingItemStub: StubProvider {
     typealias Entity = SpendingItem
 
@@ -17,27 +15,49 @@ class SpendingItemStub: StubProvider {
     required init(_ ctx: NSManagedObjectContext) {
         self.ctx = ctx
     }
+    
+    private func randCoords() -> (Double, Double) {
+        (35.68173905166872, 139.76542760754913)
+    }
+    
+    func createMany(category: SpendingCategory, count: Int) -> [SpendingItem] {
+        let (lan, lat) = randCoords()
+        
+        var data = [SpendingItem]()
+        
+        for date in DateSequence(startDate: Date(), times: count) {
+            data.append(
+                SpendingItem(
+                    ctx,
+                    type: .spend,
+                    date: date,
+                    category: category,
+                    currency: .JPY,
+                    latitude: lat,
+                    longitude: lan,
+                    amount: Int.random(in: 100..<1500)
+                )
+            )
+        }
+
+        return data
+    }
 
     func createMany(count: Int) -> [SpendingItem] {
         let spendingCategoryStub = SpendingCategoryStub(ctx)
-
         let categories = spendingCategoryStub.createMany()
-        
-        
-        let lat = 35.68173905166872
-        let lan = 139.76542760754913
-        
-        let now = Date()
-        var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: now)
-        
+        let (lan, lat) = randCoords()
+
         var data = [SpendingItem]()
 
-        for idx in 0..<count {
+        for date in DateSequence(startDate: Date(), times: count) {
+            print(date)
+
             data.append(
                 SpendingItem(
-                    context: ctx,
+                    ctx,
                     type: .spend,
-                    date: Calendar.current.date(from: dateComponents)!,
+                    date: date,
                     category: categories.randomElement()!,
                     currency: .JPY,
                     latitude: lat,
@@ -45,11 +65,6 @@ class SpendingItemStub: StubProvider {
                     amount: Int.random(in: 100..<1500)
                 )
             )
-
-            let randMod = Int.random(in: 3..<5)
-            if idx % randMod == 0 {
-                dateComponents.day! -= 1
-            }
         }
 
         return data

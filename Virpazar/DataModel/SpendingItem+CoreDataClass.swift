@@ -28,7 +28,7 @@ public class SpendingItem: NSManagedObject, Identifiable {
         get { rawValue(forKey: "currency")! }
     }
     
-    convenience init(context: NSManagedObjectContext,
+    convenience init(_ context: NSManagedObjectContext,
                      type: RecordType,
                      date: Date,
                      category: SpendingCategory,
@@ -43,7 +43,7 @@ public class SpendingItem: NSManagedObject, Identifiable {
         self.currency = currency
     }
     
-    convenience init(context: NSManagedObjectContext,
+    convenience init(_ context: NSManagedObjectContext,
                      type: RecordType,
                      date: Date,
                      category: SpendingCategory,
@@ -51,12 +51,12 @@ public class SpendingItem: NSManagedObject, Identifiable {
                      latitude: Double,
                      longitude: Double
     ) {
-        self.init(context: context, type: type, date: date, category: category, currency: currency)
+        self.init(context, type: type, date: date, category: category, currency: currency)
         self.latitude = latitude
         self.longitude = longitude
     }
     
-    convenience init(context: NSManagedObjectContext,
+    convenience init(_ context: NSManagedObjectContext,
                      type: RecordType,
                      date: Date,
                      category: SpendingCategory,
@@ -65,7 +65,7 @@ public class SpendingItem: NSManagedObject, Identifiable {
                      longitude: Double,
                      amount: Int
     ) {
-        self.init(context: context, type: type, date: date, category: category, currency: currency, latitude: latitude, longitude: longitude)
+        self.init(context, type: type, date: date, category: category, currency: currency, latitude: latitude, longitude: longitude)
         self.amount = Int32(amount)
     }
 }

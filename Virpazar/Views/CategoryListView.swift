@@ -15,7 +15,7 @@ struct CategoryListView: View {
         NavigationView {
             List(categories, id: \.id) { category in
                 Section {
-                    NavigationLink(destination: Text("Second View")) {
+                    NavigationLink(destination: CategoryView(category: category)) {
                         HStack {
                             Circle()
                                 .fill(Color(category.color))

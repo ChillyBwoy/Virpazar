@@ -92,7 +92,7 @@ struct SpendingItemFormView: View {
                     }
                 } label: {
                     if selectedCategory != nil {
-                        CategoryView(category: selectedCategory!)
+                        CategoryBadgeView(category: selectedCategory!)
                     } else {
                         Text("No category")
                             .foregroundColor(currentColor)
@@ -121,7 +121,7 @@ struct SpendingItemFormView: View {
     }
 }
 
-struct SpendingItemView_Previews: PreviewProvider {
+struct SpendingItemFormView_Previews: PreviewProvider {
     static var previews: some View {
         PersistencePreview(dispatch: { provider in
             let stub = SpendingCategoryStub(provider.context)
