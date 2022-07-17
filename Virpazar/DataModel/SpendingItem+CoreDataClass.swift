@@ -85,7 +85,7 @@ extension SpendingItem {
 }
 
 extension SpendingItem {
-    static func groupByDate(_ result: FetchedResults<SpendingItem>) -> [(Date, [SpendingItem])] {
+    static func groupByDate(_ result: [SpendingItem]) -> [(Date, [SpendingItem])] {
         let groups = Dictionary(grouping: result, by: { item in item.date })
 
         let sortedKeys: [Date] = groups.keys.sorted { (a, b) -> Bool in
@@ -95,7 +95,25 @@ extension SpendingItem {
             return false
         }
 
-        return sortedKeys.map { ($0, groups[$0] ?? []) }
+        return sortedKeys.map { date in
+            let group = (groups[date] ?? []).sorted { (a, b) in
+                if let nameA = a.category?.name, let nameB = b.category?.name {
+                    return nameA < nameB
+                }
+                
+                return false
+            }
+
+            return (date, group)
+        }
+    }
+    
+    static func groupByDate(_ result: Set<SpendingItem>) -> [(Date, [SpendingItem])] {
+        return groupByDate(Array(result))
+    }
+    
+    static func groupByDate(_ result: FetchedResults<SpendingItem>) -> [(Date, [SpendingItem])] {
+        return groupByDate(Array(result))
     }
     
     static func groupByCategory(_ result: [SpendingItem]) -> [(SpendingCategory?, [SpendingItem])] {

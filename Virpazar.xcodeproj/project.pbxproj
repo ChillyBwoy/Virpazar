@@ -40,6 +40,7 @@
 		3AFB1BF928842DB8006FE854 /* DateSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB1BF828842DB8006FE854 /* DateSequence.swift */; };
 		3AFB1BFB28843018006FE854 /* DateSequenceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB1BFA28843018006FE854 /* DateSequenceSpec.swift */; };
 		3AFB1BFC288430EF006FE854 /* DateSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB1BF828842DB8006FE854 /* DateSequence.swift */; };
+		3AFB1BFE28843F9C006FE854 /* ExpensesOnTheDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB1BFD28843F9C006FE854 /* ExpensesOnTheDate.swift */; };
 		3AFB318D288378EF0034229D /* CurrencyValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB318C288378EF0034229D /* CurrencyValuesView.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		3AFB1BF5288426BA006FE854 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		3AFB1BF828842DB8006FE854 /* DateSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSequence.swift; sourceTree = "<group>"; };
 		3AFB1BFA28843018006FE854 /* DateSequenceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSequenceSpec.swift; sourceTree = "<group>"; };
+		3AFB1BFD28843F9C006FE854 /* ExpensesOnTheDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesOnTheDate.swift; sourceTree = "<group>"; };
 		3AFB318C288378EF0034229D /* CurrencyValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyValuesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,6 +218,7 @@
 				3ACF8166287EE7A70066DFD9 /* SpendingListView.swift */,
 				3AE29ADA28821E1000A8D529 /* CategoryListView.swift */,
 				3AFB1BF5288426BA006FE854 /* CategoryView.swift */,
+				3AFB1BFD28843F9C006FE854 /* ExpensesOnTheDate.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				3A41FC25287A48510079E970 /* CategoryBadgeView.swift in Sources */,
 				3A41FC30287B66370079E970 /* Item+CoreDataClass.swift in Sources */,
 				3A41FB85287A21400079E970 /* PersistenceController.swift in Sources */,
+				3AFB1BFE28843F9C006FE854 /* ExpensesOnTheDate.swift in Sources */,
 				3A41FC23287A47680079E970 /* RecordType.swift in Sources */,
 				3A41FC2D287A4C3F0079E970 /* StubProvider.swift in Sources */,
 				3AFB1BF6288426BA006FE854 /* CategoryView.swift in Sources */,

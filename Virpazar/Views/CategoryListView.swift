@@ -37,8 +37,14 @@ struct CategoryListView: View {
 struct CategoryListView_Previews: PreviewProvider {
     static var previews: some View {
         PersistencePreview(dispatch: { provider in
-            let stub = SpendingCategoryStub(provider.context)
-            let _ = stub.createMany()
+            let categoriesStub = SpendingCategoryStub(provider.context)
+            let itemsStub = SpendingItemStub(provider.context)
+
+            let categories = categoriesStub.createMany()
+            
+            for category in categories {
+                let _ = itemsStub.createMany(category: category, count: 30)
+            }
 
             provider.save()
         }) {

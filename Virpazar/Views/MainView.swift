@@ -64,7 +64,7 @@ struct MainView_Previews: PreviewProvider {
         PersistencePreview(dispatch: { provider in
             let stub = SpendingItemStub(provider.context)
 
-            let _ = stub.createMany(count: 50)
+            let _ = stub.createMany(count: 200)
 
             provider.save()
         }) {

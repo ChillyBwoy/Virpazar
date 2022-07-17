@@ -20,6 +20,31 @@ class SpendingItemStub: StubProvider {
         (35.68173905166872, 139.76542760754913)
     }
     
+    func createMany(date: Date, count: Int) -> [SpendingItem] {
+        let spendingCategoryStub = SpendingCategoryStub(ctx)
+        let categories = spendingCategoryStub.createMany()
+        let (lan, lat) = randCoords()
+
+        var data = [SpendingItem]()
+        
+        for _ in 0..<count {
+            data.append(
+                SpendingItem(
+                    ctx,
+                    type: .spend,
+                    date: date,
+                    category: categories.randomElement()!,
+                    currency: .JPY,
+                    latitude: lat,
+                    longitude: lan,
+                    amount: Int.random(in: 100..<1500)
+                )
+            )
+        }
+        
+        return data
+    }
+    
     func createMany(category: SpendingCategory, count: Int) -> [SpendingItem] {
         let (lan, lat) = randCoords()
         
@@ -51,8 +76,6 @@ class SpendingItemStub: StubProvider {
         var data = [SpendingItem]()
 
         for date in DateSequence(startDate: Date(), times: count) {
-            print(date)
-
             data.append(
                 SpendingItem(
                     ctx,
