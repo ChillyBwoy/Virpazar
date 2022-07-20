@@ -36,17 +36,18 @@ struct SpendingItemFormView: View {
     @ObservedObject private var data = SpendingItemFormData(amount: 0, selectedCurrency: .USD)
 
     @State private var selectedCategory: SpendingCategory?
-    
+    @State private var date: Date
+
     @FetchRequest(fetchRequest: SpendingCategory.fetchAll())
     private var categories: FetchedResults<SpendingCategory>
-    
-    private func handleSubmit() {}
-    
+
     private var currentColor: Color {
         Color(selectedCategory?.color  ?? .gray)
     }
 
     init() {
+        _date = State(wrappedValue: Date())
+
         let location = LocationObject(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
         _location = StateObject(wrappedValue: location)
         location.requestLocation()
@@ -58,6 +59,9 @@ struct SpendingItemFormView: View {
                 .ignoresSafeArea()
 
             VStack(alignment: .trailing) {
+                DatePicker("Date", selection: $date, displayedComponents: [.date])
+                    .padding()
+
                 HStack(alignment: .center) {
                     TextField("Amount",
                               value: $data.amount,
@@ -108,7 +112,7 @@ struct SpendingItemFormView: View {
                 )
                 .frame(height: 110)
                 
-                Button(action: handleSubmit) {
+                Button(action: {}) {
                     Text("Add")
                         .frame(maxWidth: .infinity)
                         .padding()

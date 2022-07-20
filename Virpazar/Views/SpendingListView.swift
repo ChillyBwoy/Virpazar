@@ -18,7 +18,7 @@ struct SpendingListView: View {
         formatter.dateStyle = .short
         return formatter
     }
-    
+
     var body: some View {
         NavigationView {
              List(SpendingItem.groupByDate(entities), id: \.0) { (date, items) in

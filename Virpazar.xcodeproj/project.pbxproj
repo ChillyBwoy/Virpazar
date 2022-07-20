@@ -28,7 +28,6 @@
 		3A41FC35287B71CD0079E970 /* PersistencePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41FC34287B71CD0079E970 /* PersistencePreview.swift */; };
 		3A4F34462883562600E3C7B7 /* UIColorTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F34452883562600E3C7B7 /* UIColorTransformer.swift */; };
 		3A681F4C287CBC70007A751D /* LocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F4B287CBC70007A751D /* LocationObject.swift */; };
-		3A681F4E287CBD28007A751D /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F4D287CBD28007A751D /* LocationView.swift */; };
 		3A681F58287CD639007A751D /* SpendingItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F57287CD639007A751D /* SpendingItemFormView.swift */; };
 		3A681F5C287CDA6C007A751D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A681F5B287CDA6C007A751D /* MainView.swift */; };
 		3ACF8167287EE7A70066DFD9 /* SpendingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF8166287EE7A70066DFD9 /* SpendingListView.swift */; };
@@ -86,7 +85,6 @@
 		3A41FC34287B71CD0079E970 /* PersistencePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencePreview.swift; sourceTree = "<group>"; };
 		3A4F34452883562600E3C7B7 /* UIColorTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTransformer.swift; sourceTree = "<group>"; };
 		3A681F4B287CBC70007A751D /* LocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObject.swift; sourceTree = "<group>"; };
-		3A681F4D287CBD28007A751D /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		3A681F57287CD639007A751D /* SpendingItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingItemFormView.swift; sourceTree = "<group>"; };
 		3A681F5B287CDA6C007A751D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3ACF8166287EE7A70066DFD9 /* SpendingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListView.swift; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 				3A41FB7D287A213E0079E970 /* ContentView.swift */,
 				3A41FC24287A48510079E970 /* CategoryBadgeView.swift */,
 				3A41FC34287B71CD0079E970 /* PersistencePreview.swift */,
-				3A681F4D287CBD28007A751D /* LocationView.swift */,
 				3A681F57287CD639007A751D /* SpendingItemFormView.swift */,
 				3AFB318C288378EF0034229D /* CurrencyValuesView.swift */,
 				3A681F5B287CDA6C007A751D /* MainView.swift */,
@@ -408,7 +405,6 @@
 				3AFB318D288378EF0034229D /* CurrencyValuesView.swift in Sources */,
 				3A41FC1C287A44860079E970 /* SpendingItem+CoreDataClass.swift in Sources */,
 				3AFB1BF928842DB8006FE854 /* DateSequence.swift in Sources */,
-				3A681F4E287CBD28007A751D /* LocationView.swift in Sources */,
 				3A41FC25287A48510079E970 /* CategoryBadgeView.swift in Sources */,
 				3A41FC30287B66370079E970 /* Item+CoreDataClass.swift in Sources */,
 				3A41FB85287A21400079E970 /* PersistenceController.swift in Sources */,

@@ -8,7 +8,7 @@
 import CoreLocation
 import MapKit
 
-class LocationObject: NSObject, ObservableObject, CLLocationManagerDelegate {
+class LocationObject: NSObject, ObservableObject {
     private let manager = CLLocationManager()
 
     @Published var coordinate: CLLocationCoordinate2D?
@@ -30,11 +30,17 @@ class LocationObject: NSObject, ObservableObject, CLLocationManagerDelegate {
             self.region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         }
     }
-    
+
     func requestLocation() {
         manager.requestLocation()
     }
 
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
+}
+
+extension LocationObject: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let lastLocation = locations.first else {
             return
@@ -44,9 +50,4 @@ class LocationObject: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         updateRegion(coordinate: lastLocation.coordinate)
     }
-
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Failed to find user's location: \(error.localizedDescription)")
-    }
 }
-
