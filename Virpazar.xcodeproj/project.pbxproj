@@ -34,6 +34,7 @@
 		3AE29AD32881D01600A8D529 /* SpendingCategoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE29AD22881D01600A8D529 /* SpendingCategoryStub.swift */; };
 		3AE29AD52881D24D00A8D529 /* SpendingItemStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE29AD42881D24D00A8D529 /* SpendingItemStub.swift */; };
 		3AE29ADB28821E1000A8D529 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE29ADA28821E1000A8D529 /* CategoryListView.swift */; };
+		3AEF359C2895B3AE006B7D79 /* CategorySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF359B2895B3AE006B7D79 /* CategorySelectView.swift */; };
 		3AFB1BF428842106006FE854 /* ColorPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB1BF328842106006FE854 /* ColorPreset.swift */; };
 		3AFB1BF6288426BA006FE854 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB1BF5288426BA006FE854 /* CategoryView.swift */; };
 		3AFB1BF928842DB8006FE854 /* DateSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB1BF828842DB8006FE854 /* DateSequence.swift */; };
@@ -91,6 +92,7 @@
 		3AE29AD22881D01600A8D529 /* SpendingCategoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingCategoryStub.swift; sourceTree = "<group>"; };
 		3AE29AD42881D24D00A8D529 /* SpendingItemStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingItemStub.swift; sourceTree = "<group>"; };
 		3AE29ADA28821E1000A8D529 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		3AEF359B2895B3AE006B7D79 /* CategorySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectView.swift; sourceTree = "<group>"; };
 		3AFB1BF328842106006FE854 /* ColorPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPreset.swift; sourceTree = "<group>"; };
 		3AFB1BF5288426BA006FE854 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		3AFB1BF828842DB8006FE854 /* DateSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSequence.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				3AE29ADA28821E1000A8D529 /* CategoryListView.swift */,
 				3AFB1BF5288426BA006FE854 /* CategoryView.swift */,
 				3AFB1BFD28843F9C006FE854 /* ExpensesOnTheDate.swift */,
+				3AEF359B2895B3AE006B7D79 /* CategorySelectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				3AE29AD32881D01600A8D529 /* SpendingCategoryStub.swift in Sources */,
 				3AFB318D288378EF0034229D /* CurrencyValuesView.swift in Sources */,
 				3A41FC1C287A44860079E970 /* SpendingItem+CoreDataClass.swift in Sources */,
+				3AEF359C2895B3AE006B7D79 /* CategorySelectView.swift in Sources */,
 				3AFB1BF928842DB8006FE854 /* DateSequence.swift in Sources */,
 				3A41FC25287A48510079E970 /* CategoryBadgeView.swift in Sources */,
 				3A41FC30287B66370079E970 /* Item+CoreDataClass.swift in Sources */,

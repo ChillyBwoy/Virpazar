@@ -41,10 +41,6 @@ struct SpendingItemFormView: View {
     @FetchRequest(fetchRequest: SpendingCategory.fetchAll())
     private var categories: FetchedResults<SpendingCategory>
 
-    private var currentColor: Color {
-        Color(selectedCategory?.color  ?? .gray)
-    }
-
     init() {
         _date = State(wrappedValue: Date())
 
@@ -54,73 +50,64 @@ struct SpendingItemFormView: View {
     }
 
     var body: some View {
-        VStack {
-            Map(coordinateRegion: $location.region, showsUserLocation: true)
-                .ignoresSafeArea()
-
-            VStack(alignment: .trailing) {
-                DatePicker("Date", selection: $date, displayedComponents: [.date])
-                    .padding()
-
-                HStack(alignment: .center) {
-                    TextField("Amount",
-                              value: $data.amount,
-                              format: .number
-                        )
-                        .font(.system(size: 42))
-                        .multilineTextAlignment(.leading)
-                    
-                    Spacer()
-
-                    Menu {
-                        Picker("Currency", selection: $data.selectedCurrency) {
-                            ForEach(Currency.allCases, id:\.self) { curr in
-                                Text(curr.rawValue).tag(curr)
-                            }
-                        }
-                    } label: {
-                        Text(data.selectedCurrency.symbol())
-                            .font(.system(size: 42))
-                            .frame(height: 40)
-                            .foregroundColor(currentColor)
-                    }
-                }
+        VStack(alignment: .trailing) {
+            DatePicker("Date", selection: $date, displayedComponents: [.date])
+                .datePickerStyle(.compact)
                 .padding()
 
+            HStack(alignment: .center) {
+                TextField("Amount",
+                          value: $data.amount,
+                          format: .number
+                    )
+                    .font(.system(size: 42))
+                    .multilineTextAlignment(.leading)
+                
+                Spacer()
+
                 Menu {
-                    Picker("Category", selection: $selectedCategory) {
-                        Text("No category").tag(nil as SpendingCategory?)
-                        ForEach(categories, id: \.self) { category in
-                            Text(category.name).tag(category as SpendingCategory?)
+                    Picker("Currency", selection: $data.selectedCurrency) {
+                        ForEach(Currency.allCases, id:\.self) { curr in
+                            Text(curr.rawValue).tag(curr)
                         }
                     }
                 } label: {
-                    if selectedCategory != nil {
-                        CategoryBadgeView(category: selectedCategory!)
-                    } else {
-                        Text("No category")
-                            .foregroundColor(currentColor)
+                    Text(data.selectedCurrency.symbol())
+                        .font(.system(size: 42))
+                }
+            }
+            .padding()
+        
+            CurrencyValuesView(
+                currency: data.selectedCurrency,
+                amount: $data.amount
+            )
+
+            
+            Menu {
+                Picker("Category", selection: $selectedCategory) {
+                    Text("No category").tag(nil as SpendingCategory?)
+                    ForEach(categories, id: \.self) { category in
+                        Text(category.name).tag(category as SpendingCategory?)
                     }
                 }
-                .frame(height: 20)
-                .padding()
-
-                CurrencyValuesView(
-                    currency: data.selectedCurrency,
-                    color: currentColor,
-                    amount: $data.amount
-                )
-                .frame(height: 110)
-                
-                Button(action: {}) {
-                    Text("Add")
-                        .frame(maxWidth: .infinity)
-                        .padding()
+            } label: {
+                if selectedCategory != nil {
+                    CategoryBadgeView(category: selectedCategory!)
+                } else {
+                    Text("No category")
                 }
-                .tint(currentColor)
-                .buttonStyle(.bordered)
-                .padding()
             }
+            .frame(height: 20)
+            .padding()
+            
+            Button(action: {}) {
+                Text("Add")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+            }
+            .buttonStyle(.bordered)
+            .padding()
         }
     }
 }
